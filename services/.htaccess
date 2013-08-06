@@ -1,0 +1,8 @@
+RewriteEngine on
+RewriteBase /
+
+#if not an existing file or directory
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+# rewrite to subdirectory
+RewriteRule ^(.*)/$ services.php?/$1/

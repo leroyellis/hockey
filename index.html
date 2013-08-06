@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+    <title></title>
+    <link rel="stylesheet/less" type="text/css" href="less/styles.less" />
+    <script type="text/javascript" src="js/LAB.min.js"></script>
+    <script type="text/javascript" src="js/hockey.js"></script>
+    <script>
+        HOCKEY.init();
+    </script>
+</head>
+<body>
+    <div id="navBar">
+        <div id="teamLogo"></div>
+        <ul></ul>
+    </div>
+    <div id="contentWrapper">
+        <div id="scheduleView" display="hidden">
+        </div>
+
+        <div id="rosterView" display="hidden">
+            <table id="roster"></table>
+        </div>
+
+        <div id="newsView" display="hidden">
+        </div>
+
+        <div id="profileView" display="hidden">
+            <div id='playerPhoto'></div>
+            <span id='playerNumber'></span>
+            <span id='playerName'></span>
+        </div>
+    </div>
+</body>
+</html>
