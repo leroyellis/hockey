@@ -61,11 +61,50 @@ HOCKEY = {
     showSchedule: function()
     {
         this.setView( '#scheduleView' );
+
+        var options = {
+            url: 'services/schedule.php',
+            dataType: 'json'
+        };
+
+        $.when( $.ajax( options ) )
+         .then( function( data ) {
+             $( '#schedule ul' ).empty();
+
+             $.each( data, function() {
+                 var itemHtml = '<li>' + 
+                                    '<span class="scheduleDate">' + this.date + '</span>' + 
+                                    '<span class="scheduleTeam">' + this.homeTeam + '</span>' + 
+                                    '<span class="scheduleTeam">' + this.awayTeam + '</span>' + 
+                                    '<span class="scheduleLocation">' + this.location + '</span>' +
+                                '<li>';
+
+                 $( '#schedule ul' ).append( itemHtml );
+             });
+         });
     },
 
     showNews: function()
     {
         this.setView( '#newsView' );
+
+        var options = {
+            url: 'services/news.php',
+            dataType: 'json'
+        };
+
+        $.when( $.ajax( options ) )
+         .then( function( data ) {
+             $( '#news ul' ).empty();
+             $.each( data, function() {
+                 var itemHtml = '<li>' +
+                                    '<span class="newsTitle">' + this.title + ' - ' + this.date + '</span>' +
+                                    '<div class="newsArticle">' + this.article + '</div>' +
+                                '</li>';
+
+                 $( '#news ul' ).append( itemHtml );
+             });
+         });
     },
 
     showProfile: function( pid )
