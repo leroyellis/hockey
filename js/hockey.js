@@ -47,12 +47,15 @@ HOCKEY = {
              $.each( data, function() {
                  var itemHtml = '<tr>' + 
                                     '<td class="playerJersey">' + this.jersey + '</td>' +
-                                    '<td class="playerName" onClick="HOCKEY.showProfile(' + this.playerId + ');"><a href="#">' + this.firstName + ' ' + this.lastName + '</a></td>' +
+                                    '<td class="playerName" onClick="HOCKEY.showProfile(' + this.playerId + ');">' +
+                                        '<a href="#">' + this.firstName + ' ' + this.lastName + '</a>'+
+                                    '</td>' +
                                 '</tr>';
 
                  $( '#roster' ).append( itemHtml );
              });
-         });
+         })
+         .fail( function( e ) { console.log( e.responseText ); });
     },
 
     showSchedule: function()

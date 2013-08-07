@@ -1,33 +1,13 @@
-[
-    {
-        "playerId": 1,
-        "lastName": "Ellis",
-        "firstName": "LeRoy",
-        "middleName": "W.",
-        "jersey": 77
-    },
+<?php
+    $output = "[";
 
+    for( $i = 0; $i < 20; $i++ )
     {
-        "playerId": 2,
-        "lastName": "Collins",
-        "firstName": "Brad",
-        "middleName": "",
-        "jersey": 14
-    },
-
-    {
-        "playerId": 3,
-        "lastName": "Collins",
-        "firstName": "Weston",
-        "middleName": "",
-        "jersey": 17
-    },
-
-    {
-        "playerId": 4,
-        "lastName": "Schiel",
-        "firstName": "Adam",
-        "middleName": "R.",
-        "jersey": 21
+        $output .= "{ \"playerId\": $i, \"lastName\": \"$i\", \"firstName\": \"Player\", \"middleName\": \"M.\", \"jersey\": $i },";
     }
-]
+
+    $output = trim( $output, ',' );
+    $output .= "]";
+
+    print $output;
+?>
