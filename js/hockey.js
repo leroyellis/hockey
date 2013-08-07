@@ -21,7 +21,7 @@ HOCKEY = {
 
         $.each( navList, function() { 
             var itemHtml = '<li>' +
-                               '<div class="navButton" onClick="' + this.click + '"><a href="#">' + this.text + '</a></div>' +
+                               '<div class="navButton" onClick="' + this.click + '">' + this.text + '</div>' +
                            '</li>';
 
             $( '#navBar > ul' ).append( itemHtml );
@@ -48,7 +48,7 @@ HOCKEY = {
                  var itemHtml = '<tr>' + 
                                     '<td class="playerJersey">' + this.jersey + '</td>' +
                                     '<td class="playerName" onClick="HOCKEY.showProfile(' + this.playerId + ');">' +
-                                        '<a href="#">' + this.firstName + ' ' + this.lastName + '</a>'+
+                                        this.firstName + ' ' + this.lastName +
                                     '</td>' +
                                 '</tr>';
 
