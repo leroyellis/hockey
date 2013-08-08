@@ -33,11 +33,8 @@
 @navButtonHeight: 30px;
 
 .navButton {
-    position: relative;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
     height: @navButtonHeight;
-    margin: 30px 2px 0px 2px;
+    margin: 25px 5px 0px 5px;
     text-align: center;
     padding: 0px 10px 0px 10px;
     line-height: @navButtonHeight;
@@ -45,7 +42,15 @@
     cursor: pointer;
 }
 
+    .navButtonSelected {
+        background: gray;
+        border: 1px solid black;
+        .rounded-corners;
+    }
+
     .navButton:hover {
         background: orange;
+        border: 1px solid black;
+        .rounded-corners;
     }
 

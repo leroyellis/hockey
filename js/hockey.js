@@ -21,15 +21,23 @@ HOCKEY = {
 
         $.each( navList, function() { 
             var itemHtml = '<li>' +
-                               '<div class="navButton" onClick="' + this.click + '">' + this.text + '</div>' +
+                               '<div class="navButton" onClick="HOCKEY.selectItem( this );' + this.click + '">' + this.text + '</div>' +
                            '</li>';
 
             $( '#navBar > ul' ).append( itemHtml );
         });
 
+        $( '#navBar > ul > li:first-child > div' ).addClass( 'navButtonSelected' );
         $( '#teamLogo' ).css( 'background-image', 'url("http://i404.photobucket.com/albums/pp126/ion_the_jester/dgir.gif")' );
 
         HOCKEY.showSchedule();
+    },
+
+    selectItem: function( item )
+    {
+        $.each( $( '#navBar ul li div' ), function(){ $( this ).removeClass( 'navButtonSelected' ) } );
+
+        $( item ).addClass( 'navButtonSelected' );
     },
 
     showRoster: function( teamId )
