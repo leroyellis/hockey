@@ -32,12 +32,15 @@ HOCKEY = {
         HOCKEY.showSchedule();
     },
 
-    showRoster: function()
+    showRoster: function( teamId )
     {
         this.setView( '#rosterView' );
 
+        if( isNaN( teamId ) ) teamId = 1;
+
         var options = {
             url: 'services/roster.php',
+            data: 'tid=' + teamId,
             dataType: 'json'
         };
 
@@ -47,8 +50,8 @@ HOCKEY = {
              $.each( data, function() {
                  var itemHtml = '<tr>' + 
                                     '<td class="playerJersey">' + this.jersey + '</td>' +
-                                    '<td class="playerName" onClick="HOCKEY.showProfile(' + this.playerId + ');">' +
-                                        this.firstName + ' ' + this.lastName +
+                                    '<td class="playerName" onClick="HOCKEY.showProfile(' + this.playerid + ');">' +
+                                        this.firstname + ' ' + this.lastname +
                                     '</td>' +
                                 '</tr>';
 

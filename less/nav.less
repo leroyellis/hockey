@@ -1,7 +1,12 @@
 #navBar {
-    width: 100%;
+    width: 90%;
     height: 80px;
     margin: 0 auto;
+    .rounded-top-left;
+    .rounded-top-right;
+    background: deepskyblue;
+    border: 1px solid black;
+    border-radius-bottom-right: 0px;
 }
 
     #navBar ul {
@@ -25,18 +30,17 @@
         background-size: cover;
     }
 
+@navButtonHeight: 30px;
+
 .navButton {
-    .rounded-top-left;
-    .rounded-top-right;
-    top: 0px;
-    height: 50px;
-    background: deepskyblue;
+    position: relative;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: @navButtonHeight;
     margin: 30px 2px 0px 2px;
-    border: 1px solid black;
-    border-radius-bottom-right: 0px;
     text-align: center;
     padding: 0px 10px 0px 10px;
-    line-height: 50px;
+    line-height: @navButtonHeight;
     text-decoration: none;
     cursor: pointer;
 }
