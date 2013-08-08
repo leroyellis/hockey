@@ -118,13 +118,14 @@ HOCKEY = {
 
         var options = {
             url: 'services/player.php',
-            data: pid,
+            data: 'pid=' + pid,
             dataType: 'json'
         };
 
         $.when( $.ajax( options ) )
          .then( function( data ) {
-             $( '#playerName' ).html( data.firstName + ' ' + data.middleName + ' ' + data.lastName );
+             console.log( data );
+             $( '#playerName' ).html( data.firstname + ' ' + data.middlename + ' ' + data.lastname );
              $( '#playerJersey' ).html( data.jersey );
          });
     },

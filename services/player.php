@@ -1,7 +1,33 @@
+<?php
+
+$player = array();
+
+$playerId = $_GET['pid'];
+if( $playerId == null )
 {
-    "playerId": 1,
-    "lastName": "Ellis",
-    "firstName": "LeRoy",
-    "middleName": "W.",
-    "jersey": 77
+    $player['error'] = "No team ID was supplied!";
 }
+else
+{
+    $mysqli = new mysqli( "localhost", "ion", "Wtdip01", "hockey" );
+    if( $mysqli->connect_errno )
+    {
+        $player["error"] = "Failed to connect to the DB: $mysqli->connect_error";
+    }
+    else
+    {
+        if( $result = $mysqli->query( "SELECT * FROM player WHERE playerid=$playerId" ) )
+        {
+            $player = $result->fetch_assoc();
+        }
+        else
+        {
+            $player["error"] = "QUERY error: $mysqli->error";
+        }
+    
+        $mysqli->close();
+    }
+}
+
+printf( json_encode($player) );
+
