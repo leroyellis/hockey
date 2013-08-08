@@ -1,12 +1,32 @@
+@navGradient1: deepskyblue;
+@navGradient2: lightgray;
+
 #navBar {
     width: 90%;
     height: 80px;
     margin: 0 auto;
     .rounded-top-left;
     .rounded-top-right;
-    background: deepskyblue;
     border: 1px solid black;
     border-radius-bottom-right: 0px;
+
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
+    
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
+    
+    /* Opera */ 
+    background-image: -o-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
+    
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @navGradient2), color-stop(1, @navGradient1));
+    
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
+    
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top, @navGradient2 0%, @navGradient1 100%);
 }
 
     #navBar ul {
