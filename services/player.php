@@ -1,15 +1,17 @@
 <?php
 
+include 'mysql.php';
+
 $player = array();
 
 $playerId = $_GET['pid'];
 if( $playerId == null )
 {
-    $player['error'] = "No team ID was supplied!";
+    $player['error'] = "No player ID was supplied!";
 }
 else
 {
-    $mysqli = new mysqli( "localhost", "ion", "Wtdip01", "hockey" );
+    $mysqli = new myDB( "localhost", "ion", "Wtdip01", "hockey" );
     if( $mysqli->connect_errno )
     {
         $player["error"] = "Failed to connect to the DB: $mysqli->connect_error";
@@ -30,4 +32,3 @@ else
 }
 
 printf( json_encode($player) );
-

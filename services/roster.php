@@ -1,5 +1,7 @@
 <?php
 
+include 'mysql.php';
+
 $items = array();
 
 $teamid = $_GET['tid'];
@@ -9,7 +11,7 @@ if( $teamid == null )
 }
 else
 {
-    $mysqli = new mysqli( "localhost", "ion", "Wtdip01", "hockey" );
+    $mysqli = new myDB( "localhost", "ion", "Wtdip01", "hockey" );
     if( $mysqli->connect_errno )
     {
         $items["error"] = "Failed to connect to the DB: $mysqli->connect_error";
