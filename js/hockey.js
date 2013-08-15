@@ -31,6 +31,9 @@ HOCKEY = {
         $( '#navBar > ul > li:first-child > div' ).addClass( 'navButtonSelected' );
         $( '#teamLogo' ).css( 'background-image', 'url("http://i404.photobucket.com/albums/pp126/ion_the_jester/dgir.gif")' );
 
+        $.each( $( '#contentWrapper > div' ), function() {
+            $( this ).toggle( "slide", {}, 500, null );
+        });
         HOCKEY.showSchedule();
     },
 
@@ -145,9 +148,9 @@ HOCKEY = {
         if( this.curView == newView ) return;
         
         $( this.curView ).hide();
+        $( newView ).toggle( "slide", {}, 500, null );
 
         this.curView = newView;
 
-        $( this.curView ).show();
     },
 }
