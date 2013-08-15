@@ -3,9 +3,11 @@
 
 #contentWrapper {
     width: 100%;
-    border: 1px solid black;
-    margin: 0 auto;
-    .rounded-corners;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    .rounded-bottom-left;
+    .rounded-bottom-right;
 
     /* IE10 Consumer Preview */ 
     background-image: -ms-linear-gradient(top, @contentGradient1 0%, @contentGradient2 100%);
@@ -27,7 +29,7 @@
 }
 
 #schedule, #roster, #news {
-    margin: 10px;
+    padding: 10px 10px 10px 10px;
 }
 
 .scheduleDate, .scheduleTeam, .scheduleLocation {

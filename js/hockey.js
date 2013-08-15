@@ -5,7 +5,8 @@ HOCKEY = {
 
     init: function()
     {
-        $LAB.script( "js/jquery-2.0.3.min.js" )
+        $LAB.script( "js/jquery-2.0.3.min.js" ).wait()
+            .script( "js/jquery-ui-1.10.3/ui/minified/jquery-ui.min.js" )
             .script( "js/less-1.4.1.min.js" ).wait( function() {
                 HOCKEY.ready();
             });
@@ -80,11 +81,12 @@ HOCKEY = {
 
         $.when( $.ajax( options ) )
          .then( function( data ) {
-             $( '#schedule ul' ).empty();
+             $( '#schedule > ul' ).empty();
 
              $.each( data, function() {
                  var itemHtml = '<li>' + 
                                     '<span class="scheduleDate">' + this.date + '</span>' + 
+                                    '<span class="scheduleDate">' + this.time + '</span>' + 
                                     '<span class="scheduleTeam">' + this.homeTeam + '</span>' + 
                                     '<span class="scheduleTeam">' + this.awayTeam + '</span>' + 
                                     '<span class="scheduleLocation">' + this.location + '</span>' +

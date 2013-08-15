@@ -1,32 +1,37 @@
 @navGradient1: deepskyblue;
 @navGradient2: lightgray;
 
+@navBarHeight: 80px;
+@navButtonHeight: 30px;
+
+.set-gradient( @color1: gray, @color2: lightgray ) {
+    /* IE10 Consumer Preview */ 
+    background-image: -ms-linear-gradient(bottom, @color2 0%, @color1 100%);
+    
+    /* Mozilla Firefox */ 
+    background-image: -moz-linear-gradient(bottom, @color2 0%, @color1 100%);
+    
+    /* Opera */ 
+    background-image: -o-linear-gradient(bottom, @color2 0%, @color1 100%);
+    
+    /* Webkit (Safari/Chrome 10) */ 
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @color2), color-stop(1, @color1));
+    
+    /* Webkit (Chrome 11+) */ 
+    background-image: -webkit-linear-gradient(bottom, @color2 0%, @color1 100%);
+    
+    /* W3C Markup, IE10 Release Preview */ 
+    background-image: linear-gradient(to top, @color2 0%, @color1 100%);
+}
+
+
 #navBar {
-    width: 90%;
-    height: 80px;
-    margin: 0 auto;
+    width: 100%;
+    height: @navBarHeight;
     .rounded-top-left;
     .rounded-top-right;
     border: 1px solid black;
-    border-radius-bottom-right: 0px;
-
-    /* IE10 Consumer Preview */ 
-    background-image: -ms-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
-    
-    /* Mozilla Firefox */ 
-    background-image: -moz-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
-    
-    /* Opera */ 
-    background-image: -o-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
-    
-    /* Webkit (Safari/Chrome 10) */ 
-    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, @navGradient2), color-stop(1, @navGradient1));
-    
-    /* Webkit (Chrome 11+) */ 
-    background-image: -webkit-linear-gradient(bottom, @navGradient2 0%, @navGradient1 100%);
-    
-    /* W3C Markup, IE10 Release Preview */ 
-    background-image: linear-gradient(to top, @navGradient2 0%, @navGradient1 100%);
+    .set-gradient( @navGradient1, @navGradient2 );
 }
 
     #navBar ul {
@@ -36,41 +41,36 @@
             float: left;
         }
 
-            #navBar ul li span {
-
-                border: 1px solid blue;
-            }
-
     #teamLogo {
-        width: 80px;
-        height: 80px;
+        width: @navBarHeight;
+        height: @navBarHeight;
         margin: 0px 10px 0px 10px;
         float: left;
         .rounded-corners;
         background-size: cover;
     }
 
-@navButtonHeight: 30px;
-
 .navButton {
     height: @navButtonHeight;
-    margin: 25px 5px 0px 5px;
+    margin: (@navBarHeight - @navButtonHeight)-16px 5px 0px 5px;
     text-align: center;
     padding: 0px 10px 0px 10px;
     line-height: @navButtonHeight;
     text-decoration: none;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    .rounded-top-left;
+    .rounded-top-right;
     cursor: pointer;
+        .set-gradient( white );
 }
 
     .navButtonSelected {
-        background: gray;
-        border: 1px solid black;
-        .rounded-corners;
+    .set-gradient;
     }
 
     .navButton:hover {
-        background: orange;
-        border: 1px solid black;
-        .rounded-corners;
+        .set-gradient( orange );
     }
 
