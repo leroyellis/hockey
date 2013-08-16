@@ -5,8 +5,6 @@ View_Profile = { Profile: {
     {
         if( isNaN( pid ) ) return;
 
-        HOCKEY.setView( '#profileView' );
-
         var options = {
             url: 'services/player.php',
             data: 'pid=' + pid,
@@ -20,6 +18,8 @@ View_Profile = { Profile: {
              $( '#playerPhoto' ).html( '<img src="' + data.url + '">' );
              $( '#playerName' ).html( data.firstname + ' ' + data.middlename + ' ' + data.lastname );
              $( '#playerJersey' ).html( data.jersey );
+
+             HOCKEY.setView( '#profileView' );
          });
     },
 }}

@@ -2,8 +2,6 @@ View_Schedule = { Schedule: {
     
     show: function()
     {
-        HOCKEY.setView( '#scheduleView' );
-
         var options = {
             url: 'services/schedule.php',
             dataType: 'json'
@@ -24,6 +22,8 @@ View_Schedule = { Schedule: {
 
                  $( '#schedule ul' ).append( itemHtml );
              });
+
+             HOCKEY.setView( '#scheduleView' );
          });
     },
 }}

@@ -2,8 +2,6 @@ View_Roster = { Roster: {
     
     show: function( teamId )
     {
-        HOCKEY.setView( '#rosterView' );
-
         if( isNaN( teamId ) ) teamId = 1;
 
         var options = {
@@ -25,6 +23,8 @@ View_Roster = { Roster: {
 
                  $( '#roster' ).append( itemHtml );
              });
+
+             HOCKEY.setView( '#rosterView' );
          })
          .fail( function( e ) { console.log( e.responseText ); });
     },

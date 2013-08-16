@@ -2,8 +2,6 @@ View_News = { News: {
     
     show: function()
     {
-        HOCKEY.setView( '#newsView' );
-
         var options = {
             url: 'services/news.php',
             dataType: 'json'
@@ -20,6 +18,8 @@ View_News = { News: {
 
                  $( '#news ul' ).append( itemHtml );
              });
+
+             HOCKEY.setView( '#newsView' );
          });
     },
 }}
