@@ -17,7 +17,7 @@ View_Profile = { Profile: {
              data.url = 'http://i404.photobucket.com/albums/pp126/ion_the_jester/dgir.gif';
              $( '#playerPhoto' ).html( '<img src="' + data.url + '">' );
              $( '#playerName' ).html( data.firstname + ' ' + data.middlename + ' ' + data.lastname );
-             $( '#playerJersey' ).html( data.jersey );
+             $( '#playerNumber' ).html( data.jersey );
 
              HOCKEY.setView( '#profileView' );
          });
