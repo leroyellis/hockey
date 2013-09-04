@@ -11,7 +11,7 @@ View_News = { News: {
          .then( function( data ) {
              $( '#news ul' ).empty();
              $.each( data, function() {
-                 var itemHtml = '<li>' +
+                 var itemHtml = '<li title="' + this.title + '">' +
                                     '<span class="newsTitle">' + this.title + ' - ' + this.date + '</span>' +
                                     '<div class="newsArticle">' + this.article + '</div>' +
                                 '</li>';

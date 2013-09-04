@@ -52,11 +52,12 @@ HOCKEY = {
 
         // Set the first buttong as selected (the schedule)
         $( '#navBar > ul > li:first-child > div' ).addClass( 'navButtonSelected' );
-//        $( '#teamLogo' ).css( 'background-image', 'url("http://i404.photobucket.com/albums/pp126/ion_the_jester/dgir.gif")' );
         $( '#teamLogo' ).css( 'background-image', 'url("assets/devils.jpg")' );
 
         // Show the schedule as the base view
         HOCKEY.Views.Schedule.show();
+
+        HOCKEY.testWebGL();
     },
 
     selectItem: function( item )
@@ -76,5 +77,10 @@ HOCKEY = {
 
         this.curView = newView;
 
+    },
+
+    testWebGL: function()
+    {
+        console.log( "Testing the WebGL stuff here..." );
     },
 }
