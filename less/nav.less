@@ -24,14 +24,20 @@
     background-image: linear-gradient(to top, @color2 0%, @color1 100%);
 }
 
-
-#navBar {
+#navWrapper {
     position: fixed;
     width: 100%;
+    background: @navGradient2;
+}
+
+#navSpacer {
+    height: 20px;
+}
+
+#navBar {
     height: @navBarHeight;
-    .rounded-top-left;
-    .rounded-top-right;
-    border: 1px solid black;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
     .set-gradient( @navGradient1, @navGradient2 );
 }
 
