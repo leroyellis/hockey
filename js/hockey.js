@@ -3,6 +3,7 @@ HOCKEY = {
     
     curView: 'none',
     Views: {},
+    animate: true,
 
     init: function()
     {
@@ -47,7 +48,14 @@ HOCKEY = {
 
         // Toggle all the views to be slid off the screen.
         $.each( $( '#contentWrapper > div' ), function() {
-            $( this ).toggle( "slide", {}, 5, null );
+            if( HOCKEY.animate )
+            {
+                $( this ).toggle( "slide", {}, 5, null );
+            }
+            else
+            {
+                $( this ).hide();
+            }
         });
 
         // Set the first buttong as selected (the schedule)
@@ -73,7 +81,14 @@ HOCKEY = {
         if( this.curView == newView ) return;
         
         $( this.curView ).hide();
-        $( newView ).toggle( "slide", {}, 500, null );
+        if( this.animate )
+        {
+            $( newView ).toggle( "slide", {}, 500, null );
+        }
+        else
+        {
+            $( newView ).show();
+        }
 
         this.curView = newView;
 
