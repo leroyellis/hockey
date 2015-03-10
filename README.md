@@ -1,4 +1,4 @@
-Current Status: Planning / Prototype Stage
+Current Status: Planning / Prototype Stage - On Hold
 
 Future Plans:
 - MySQL DB storage backend
