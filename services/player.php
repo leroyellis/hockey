@@ -11,7 +11,7 @@ if( $playerId == null )
 }
 else
 {
-    $mysqli = new myDB( "localhost", "ion", "Wtdip01", "hockey" );
+    $mysqli = new myDB();
     if( $mysqli->connect_errno )
     {
         $player["error"] = "Failed to connect to the DB: $mysqli->connect_error";
@@ -26,8 +26,6 @@ else
         {
             $player["error"] = "QUERY error: $mysqli->error";
         }
-    
-        $mysqli->close();
     }
 }
 

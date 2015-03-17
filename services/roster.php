@@ -11,7 +11,7 @@ if( $teamid == null )
 }
 else
 {
-    $mysqli = new myDB( "localhost", "ion", "Wtdip01", "hockey" );
+    $mysqli = new myDB();
     if( $mysqli->connect_errno )
     {
         $items["error"] = "Failed to connect to the DB: $mysqli->connect_error";
@@ -20,18 +20,16 @@ else
     {
         if( $result = $mysqli->query( "SELECT playerid, firstname, middlename, lastname, jersey FROM player WHERE teamid=$teamid" ) )
         {
-            for( $i = 0; $i < $result->num_rows; $i++ )
-            {
-                array_push( $items, $result->fetch_assoc() );
-            }
+			while( $row = $result->fetch_assoc() )
+			{
+				$items[] = $row;
+			}
             $result->close();
         }
         else
         {
             $items["error"] = "QUERY error: $mysqli->error";
         }
-    
-        $mysqli->close();
     }
 }
 
