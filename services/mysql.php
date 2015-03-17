@@ -4,7 +4,7 @@ class myDB extends mysqli
 {
     public function __construct()
     {
-		$config = parse_ini_file('./db_config.ini');
+		$config = parse_ini_file('/home/ion/db_config.ini');
 
 		if( $config['server'] == "" )
 		{
