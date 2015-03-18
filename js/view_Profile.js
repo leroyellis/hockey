@@ -6,6 +6,7 @@ View_Profile = { Profile: {
         if( isNaN( pid ) ) return;
 
         var options = {
+			method: 'GET',
             url: 'services/player.php',
             data: 'pid=' + pid,
             dataType: 'json'

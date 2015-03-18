@@ -3,6 +3,7 @@ View_News = { News: {
     show: function()
     {
         var options = {
+			method: 'GET',
             url: 'services/news.php',
             dataType: 'json'
         };

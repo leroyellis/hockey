@@ -5,6 +5,7 @@ View_Roster = { Roster: {
         if( isNaN( teamId ) ) teamId = 1;
 
         var options = {
+			method: 'GET',
             url: 'services/roster.php',
             data: 'tid=' + teamId,
             dataType: 'json'

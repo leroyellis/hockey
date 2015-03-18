@@ -3,6 +3,7 @@ View_Schedule = { Schedule: {
     show: function()
     {
         var options = {
+			method: 'GET',
             url: 'services/schedule.php',
             dataType: 'json'
         };

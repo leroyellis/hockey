@@ -21,6 +21,10 @@ HOCKEY = {
                 $.extend( HOCKEY.Views, View_News );
                 delete( View_News );
             })
+            .script( "js/view_ServiceChecker.js" ).wait( function() {
+                $.extend( HOCKEY.Views, View_SC );
+                delete( View_SC );
+            })
             .script( "js/view_Profile.js" ).wait( function() {
                 $.extend( HOCKEY.Views, View_Profile );
                 delete( View_Profile );
@@ -35,7 +39,8 @@ HOCKEY = {
         var navList = [ 
                           { text: 'Schedule', icon: '', click: 'HOCKEY.Views.Schedule.show();' },
                           { text: 'Roster', icon: '', click: 'HOCKEY.Views.Roster.show();' },
-                          { text: 'News', icon: '', click: 'HOCKEY.Views.News.show();' }
+                          { text: 'News', icon: '', click: 'HOCKEY.Views.News.show();' },
+//                          { text: 'Service Check', icon: '', click: 'HOCKEY.Views.SC.show();' }
                       ];
 
         $.each( navList, function() { 
