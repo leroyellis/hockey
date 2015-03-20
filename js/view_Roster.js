@@ -6,13 +6,19 @@ View_Roster = { Roster: {
 
         var options = {
 			method: 'GET',
-            url: 'services/roster.php',
-            data: 'tid=' + teamId,
-            dataType: 'json'
+            dataType: 'json',
+            //url: 'services/roster.php',
+            //data: 'tid=' + teamId,
+            url: 'services/v1/roster/' + teamId,
+			crossDomain: true,
+			xhrFields: {
+				withCredentials: false
+			}
         };
 
         $.when( $.ajax( options ) )
          .then( function( data ) {
+//			 console.log( data );
              $( '#roster' ).html( '<tr><th>#</th><th>Name</th></tr>' );
              $.each( data, function() {
                  var itemHtml = '<tr>' + 
@@ -27,6 +33,8 @@ View_Roster = { Roster: {
 
              HOCKEY.setView( '#rosterView' );
          })
-         .fail( function( e ) { console.log( e.responseText ); });
+         .fail( function() {
+			 alert( "Unable to retrieve roster data!" );
+		 });
     },
 }}
