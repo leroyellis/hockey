@@ -25,9 +25,9 @@ HOCKEY = {
                 $.extend( HOCKEY.Views, View_SC );
                 delete( View_SC );
             })
-            .script( "js/view_Profile.js" ).wait( function() {
-                $.extend( HOCKEY.Views, View_Profile );
-                delete( View_Profile );
+            .script( "js/view_Player.js" ).wait( function() {
+                $.extend( HOCKEY.Views, View_Player );
+                delete( View_Player );
             })
             .script( "js/less-1.4.1.min.js" ).wait( function() {
                 HOCKEY.ready();
@@ -69,8 +69,6 @@ HOCKEY = {
 
         // Show the schedule as the base view
         HOCKEY.Views.Schedule.show();
-
-        HOCKEY.testWebGL();
     },
 
     selectItem: function( item )
@@ -97,10 +95,5 @@ HOCKEY = {
 
         this.curView = newView;
 
-    },
-
-    testWebGL: function()
-    {
-        console.log( "Testing the WebGL stuff here..." );
     },
 }

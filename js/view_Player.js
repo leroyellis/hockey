@@ -1,5 +1,5 @@
 
-View_Profile = { Profile: {
+View_Player = { Player: {
 
     show: function( pid )
     {
@@ -11,10 +11,6 @@ View_Profile = { Profile: {
             //url: 'services/player.php',
             //data: 'pid=' + pid,
             url: 'services/v1/player/' + pid,
-			crossDomain: true,
-			xhrFields: {
-				withCredentials: false
-			}
         };
 
         $.when( $.ajax( options ) )
@@ -25,10 +21,10 @@ View_Profile = { Profile: {
              $( '#playerName' ).html( data.firstname + ' ' + data.middlename + ' ' + data.lastname );
              $( '#playerNumber' ).html( data.jersey );
 
-             HOCKEY.setView( '#profileView' );
+             HOCKEY.setView( '#playerView' );
          })
 		 .fail( function() {
-			 alert( "Unable to retrieve profile data!" );
+			 alert( "Unable to retrieve player data!" );
 		 });
     },
 }}

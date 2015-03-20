@@ -4,8 +4,9 @@ View_Schedule = { Schedule: {
     {
         var options = {
 			method: 'GET',
-            url: 'services/schedule.php',
-            dataType: 'json'
+            dataType: 'json',
+            //url: 'services/schedule.php'
+            url: 'services/v1/schedule/'
         };
 
         $.when( $.ajax( options ) )

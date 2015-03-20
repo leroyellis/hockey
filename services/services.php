@@ -3,6 +3,8 @@ require_once 'RESTService.php';
 require_once 'mysql.php';
 require_once 'roster.php';
 require_once 'player.php';
+require_once 'news.php';
+require_once 'schedule.php';
 
 class Services extends RESTService
 {
@@ -26,6 +28,8 @@ class Services extends RESTService
 
 	use RosterService;
 	use PlayerService;
+	use ScheduleService;
+	use NewsService;
 }
 
 // Requests from the same server don't have a HTTP_ORIGIN header

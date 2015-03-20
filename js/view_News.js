@@ -4,8 +4,9 @@ View_News = { News: {
     {
         var options = {
 			method: 'GET',
-            url: 'services/news.php',
-            dataType: 'json'
+            dataType: 'json',
+//            url: 'services/news.php'
+            url: 'services/v1/news/'
         };
 
         $.when( $.ajax( options ) )

@@ -10,10 +10,6 @@ View_Roster = { Roster: {
             //url: 'services/roster.php',
             //data: 'tid=' + teamId,
             url: 'services/v1/roster/' + teamId,
-			crossDomain: true,
-			xhrFields: {
-				withCredentials: false
-			}
         };
 
         $.when( $.ajax( options ) )
@@ -23,7 +19,7 @@ View_Roster = { Roster: {
              $.each( data, function() {
                  var itemHtml = '<tr>' + 
                                     '<td class="playerJersey">' + this.jersey + '</td>' +
-                                    '<td class="playerName" onClick="HOCKEY.Views.Profile.show(' + this.playerid + ');">' +
+                                    '<td class="playerName" onClick="HOCKEY.Views.Player.show(' + this.playerid + ');">' +
                                         this.firstname + ' ' + this.lastname +
                                     '</td>' +
                                 '</tr>';
