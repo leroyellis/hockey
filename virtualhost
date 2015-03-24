@@ -1,0 +1,18 @@
+    <Directory /var/www/hockey>
+        Options Indexes FollowSymLinks MultiViews
+        AllowOverride All
+        Order allow,deny
+        allow from all
+        <IfModule mod_rewrite.c>
+            RewriteEngine On
+
+            RewriteBase /hockey/
+            RewriteRule services/v1/(.*)$ services/services.php?request=$1 [QSA,NC,L]
+
+            RewriteCond %{REQUEST_FILENAME} !-f
+            RewriteCond %{REQUEST_FILENAME} !-d
+            RewriteCond %{REQUEST_FILENAME} !-l
+            RewriteRule ^(.*)$ index.html [L,QSA]
+        </IfModule>
+    </Directory>
+
